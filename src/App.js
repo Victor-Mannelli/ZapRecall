@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import GlobalStyle from "./GlobalStyles";
+import Main from "./Flash Card/Main"
+import Footer from "./Footer";
+import Header from "./Header";
 
-function App() {
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      < Header />
+      < Main /> 
+      < Footer />
+      < GlobalStyle />
+    </StyledApp>
   );
 }
 
-export default App;
+const StyledApp = styled.div `
+
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  
+  background-color: #FB6B6B;
+
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0 0 200px 0;
+`
