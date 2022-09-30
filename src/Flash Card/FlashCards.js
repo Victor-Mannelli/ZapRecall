@@ -2,50 +2,58 @@ import styled from "styled-components"
 import { useState } from "react"
 import restart from "../img/restart-arrow.png"
 import play from "../img/arrow-play.png"
-import FlashCardArray from "../Flash Card/FlashCardArray"
+import FlashCardArray from "./FlashCardArray"
 
 export default function FlashCards(){
     return (
         <>
-            {FlashCardArray.map((e, i) => <FlashCard key={i} answer={e.answer} question={e.question}/> )}
+            {FlashCardArray.map((e, i) => <FlashCard key={i} i = {i} answer={e.answer} question={e.question}/> )}
         </>
     )
 }
-function FlashCard({answer, question}){
-    const [FcState, setFcState] = useState("front")
-
-    if(FcState === "front") {
+function FlashCard({answer, question, i}){
+    const [FcState, setFcState] = useState("start")
+    if (FcState === "start") {
         return (
-            <StyledFrontSide>
-                <p> {question} </p>
+            <StyledQuestion>
+                <p> Questão {i} </p>
                 <img 
-                    onClick={() => setFcState("back")}
+                    onClick={() => setFcState("front")}
                     src={play} 
                     alt=""
                 />
-            </StyledFrontSide>
+            </StyledQuestion>
         )
-    } else {
+    }
+    if (FcState === "front") {
         return (
-            <StyledBackSide >
-                <p> {answer} </p>
+            <StyledFlashCard>
+                <p> {question} </p>
                 <img 
-                    onClick={() => setFcState("front")}
+                    onClick={() => setFcState("back")}
                     src={restart} 
-                    alt=""/>
-            </StyledBackSide> 
+                    alt=""
+                />
+            </StyledFlashCard>
+        )
+    } 
+    if (FcState === "back") {
+        return (
+            <StyledFlashCard >
+                <p> {answer} </p>
+            </StyledFlashCard> 
         )
     }
 }
 
-const StyledBackSide = styled.div `
+const StyledFlashCard = styled.div `
 
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    width: 300px;
+    width: 70vw; 
     min-height: 100px;
     margin: 12px;
     padding: 15px;
@@ -67,13 +75,13 @@ const StyledBackSide = styled.div `
         right: 10px;
     }
 `
-const StyledFrontSide = styled.div `
+const StyledQuestion = styled.div `
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    width: 300px;   
+    width: 70vw;   
     height: 65px;
     margin: 12px;
     padding: 15px;

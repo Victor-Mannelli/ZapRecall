@@ -27,7 +27,6 @@ export default function Footer(){
 */
 
 const StyledFooter = styled.div `
-
     position: fixed;
     bottom: 0;
     
@@ -44,10 +43,9 @@ const StyledFooter = styled.div `
     font-family: 'Recursive';
     font-weight: 400;
     font-size: 18px;
-    padding: 10px;
+    padding: 0 0 20px 0;
 `
 const FooterButtons = styled.div `
-
     display: flex;
     justify-content: space-between;
 
@@ -59,7 +57,8 @@ const FooterButtons = styled.div `
         justify-content: center;
         align-items: center;
 
-        width: 90px;
+        width: 90vw;
+        height: 40px;
         
         text-align: center;
         font-family: 'Recursive';
@@ -71,7 +70,8 @@ const FooterButtons = styled.div `
         
         border-radius: 5px;
         border: none;
-        padding:5px;
+        padding: 5px;
+        margin: 0 5px 0 5px;
 
         &:nth-child(1) {
             background-color: #FF3030;
@@ -86,7 +86,7 @@ const FooterButtons = styled.div `
 
     `
 const FooterH1 = styled.h1 `
-
+    text-align: center;
     font-style: normal;
     line-height: 22px;
 `

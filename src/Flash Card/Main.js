@@ -1,4 +1,4 @@
-import FlashCards from "./FlashCard"
+import FlashCards from "./FlashCards"
 
 export default function Main(){
 

@@ -27,5 +27,5 @@ const StyledApp = styled.div `
   width: 100vw;
   min-height: 100vh;
   margin: 0px;
-  padding: 0 0 200px 0;
+  padding: 0 0 140px 0;
 `
