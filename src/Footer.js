@@ -2,15 +2,22 @@ import styled from "styled-components"
 
 export default function Footer({RespondedCounter, fcQuantity}){
     return (
-        <StyledFooter>
-            <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
-        </StyledFooter>
+        <>
+            <StyledFooter>
+                <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
+            </StyledFooter>
+            <div> 
+
+            </div>
+        </>
+        
     )
 }
 
 const StyledFooter = styled.div `
     position: fixed;
     bottom: 0;
+    left: 0;
     
     display: flex;
     flex-direction: column;
