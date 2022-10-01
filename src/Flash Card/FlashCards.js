@@ -19,7 +19,7 @@ function FlashCard({answer, question, i}){
         <>
             {
             FcState === "start" ?
-                <StyledQuestion>
+                <StyledQuestion QuestionIcon={QuestionIcon}>
                     <p> Questão {i} </p>
                     <img 
                         onClick={() => setFcState("front")}
@@ -117,7 +117,16 @@ const StyledQuestion = styled.div `
         font-weight: 700;
         font-size: 16px;
         line-height: 19px;
-        color: #333333;
+        color: ${props => props.QuestionIcon === "start" ?
+            "#333333" 
+            : props.QuestionIcon === "zap" ?       
+            "#2FBE34"
+            : props.QuestionIcon === "almost" ?
+            "#FF922E"
+            : props.QuestionIcon === "wrong" &&
+            "#FF3030"
+        };
+        text-decoration-line: ${props => props.QuestionIcon === "start" ? undefined : "line-through"};
     }
     img {
         position: absolute;
