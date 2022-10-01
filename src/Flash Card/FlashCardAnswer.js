@@ -3,15 +3,18 @@ import styled from "styled-components";
 export default function FlashCardAnswer({answer, setFcState, setQuestionIcon, respondedCounter, setRespondedCounter}){
     return (
         <StyledFcAnswer>
-            <p> {answer} </p> 
+            <p data-identifier="flashcard-answer"> {answer} </p> 
             <AnswerButtons>
                 <button
+                    data-identifier="forgot-btn"
                     onClick={() => {setFcState("start"); setQuestionIcon("wrong"); setRespondedCounter(respondedCounter + 1) }}
                 > Não lembrei </button>
                 <button
+                    data-identifier="almost-forgot-btn"
                     onClick={() => {setFcState("start"); setQuestionIcon("almost"); setRespondedCounter(respondedCounter + 1)}}
                 > Quase não lembrei </button> 
                 <button
+                    data-identifier="zap-btn"
                     onClick={() => {setFcState("start"); setQuestionIcon("zap"); setRespondedCounter(respondedCounter + 1)}}
                 > Zap! </button>
             </AnswerButtons>

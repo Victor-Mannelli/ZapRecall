@@ -3,7 +3,7 @@ import styled from "styled-components"
 export default function Footer({RespondedCounter, fcQuantity}){
     return (
         <StyledFooter>
-            <FooterH1> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
+            <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
         </StyledFooter>
     )
 }

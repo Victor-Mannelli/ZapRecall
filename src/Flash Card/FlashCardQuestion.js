@@ -4,11 +4,12 @@ import restart from "../Images/restart-arrow.png"
 export default function FlashCardQuestion({setFcState, question}){
     return (
         <StyledFlashCard>
-            <p> {question} </p>
+            <p data-identifier="flashcard-question"> {question} </p>
             <img 
                 onClick={() => setFcState("back")}
                 src={restart} 
                 alt=""
+                data-identifier="flashcard-turn-btn"
             />
         </StyledFlashCard>
     )

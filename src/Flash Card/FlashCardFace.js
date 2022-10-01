@@ -4,19 +4,20 @@ import play from "../Images/arrow-play.png"
 export default function FlashCardFace({QuestionIcon, setFcState, i}){
     return (
         <StyledFcFace QuestionIcon={QuestionIcon}>
-            <p> Questão {i} </p>
+            <p data-identifier="flashcard-index-item"> Questão {i} </p>
             <img 
                 onClick={() => setFcState("front")}
                 src={ QuestionIcon === "start" ? play : undefined }
                 alt=""
+                data-identifier="flashcard-show-btn"
             />
             <StyledIcons QuestionIcon={QuestionIcon}>
                 {QuestionIcon === "zap" ? 
-                    <ion-icon name="checkmark-circle" />
+                    <ion-icon data-identifier="flashcard-status" name="checkmark-circle" />
                     : QuestionIcon === "almost" ?
-                    <ion-icon name="help-circle" />
+                    <ion-icon data-identifier="flashcard-status" name="help-circle" />
                     : QuestionIcon === "wrong" &&
-                    <ion-icon name="close-circle" />
+                    <ion-icon data-identifier="flashcard-status" name="close-circle" />
                 }
             </StyledIcons>
         </StyledFcFace>

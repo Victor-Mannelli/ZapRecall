@@ -16,6 +16,7 @@ export default function FlashCards({respondedCounter, setRespondedCounter, setFc
                     question={e.question}
                     setRespondedCounter={setRespondedCounter}
                     respondedCounter={respondedCounter}
+                    data-identifier="flashcard"
                 /> 
             )}
         </>
@@ -30,8 +31,10 @@ function FlashCard({answer, question, i, setRespondedCounter, respondedCounter})
             {
             FcState === "start" ?
                 <FlashCardFace QuestionIcon={QuestionIcon} setFcState={setFcState} i={i}/>
+
             : FcState === "front" ?
                 <FlashCardQuestion setFcState={setFcState} question={question}/>
+
             : FcState === "back" &&
                 <FlashCardAnswer 
                     answer={answer} 

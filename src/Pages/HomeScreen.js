@@ -7,7 +7,8 @@ export default function HomeScreen({setZapState}){
         <img src={logo} alt=""/>
         <h1>ZapRecall</h1>
         <button
-            onClick={() => setZapState(true)}
+          data-identifier="start-btn"
+          onClick={() => setZapState(true)}
         >Iniciar Recall!</button>
     </StyledHomeScreen>
   )
