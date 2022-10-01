@@ -1,0 +1,44 @@
+import styled from "styled-components"
+import restart from "../Images/restart-arrow.png"
+
+export default function FlashCardQuestion({setFcState, question}){
+    return (
+        <StyledFlashCard>
+            <p> {question} </p>
+            <img 
+                onClick={() => setFcState("back")}
+                src={restart} 
+                alt=""
+            />
+        </StyledFlashCard>
+    )
+}
+const StyledFlashCard = styled.div `
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 70vw; 
+    min-height: 100px;
+    margin: 12px;
+    padding: 17px;
+
+    background-color: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+
+    img, ion-icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+`

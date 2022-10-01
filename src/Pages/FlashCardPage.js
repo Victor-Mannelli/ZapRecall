@@ -2,13 +2,21 @@ import styled from "styled-components";
 import FlashCards from "../Flash Card/FlashCards"
 import Footer from "../Footer";
 import Header from "../Header";
+import { useState } from "react";
 
 export default function FlashCardPage(){
+  const [respondedCounter, setRespondedCounter] = useState(0);
+  const [fcQuantity, setFcQuantity] = useState(0);
+
   return (
       <StyledApp>
         < Header />
-        < FlashCards /> 
-        < Footer />
+        < FlashCards 
+          respondedCounter={respondedCounter}
+          setFcQuantity={setFcQuantity} 
+          setRespondedCounter={setRespondedCounter}
+        /> 
+        < Footer RespondedCounter={respondedCounter} fcQuantity={fcQuantity}/>
       </StyledApp>
   )
 }

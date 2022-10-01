@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function Footer(){
+export default function Footer({RespondedCounter, fcQuantity}){
     return (
         <StyledFooter>
-            <FooterH1> 0/0 CONCLUÍDOS </FooterH1>
+            <FooterH1> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
         </StyledFooter>
     )
 }
