@@ -1,31 +1,14 @@
-import styled from "styled-components";
 import GlobalStyle from "./GlobalStyles";
-import Main from "./Flash Card/Main"
-import Footer from "./Footer";
-import Header from "./Header";
+import { useState } from "react";
+import FlashCardPage from "./Pages/FlashCardPage";
+import HomeScreen from "./Pages/HomeScreen";
 
 export default function App() {
-
+  const [zapState, setZapState] = useState(false)
   return (
-    <StyledApp>
-      < Header />
-      < Main /> 
-      < Footer />
-      < GlobalStyle />
-    </StyledApp>
-  );
+    <>
+      {zapState ? <FlashCardPage/> : <HomeScreen setZapState={setZapState}/>}
+      <GlobalStyle />
+    </>
+  )
 }
-
-const StyledApp = styled.div `
-
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-  
-  background-color: #FB6B6B;
-
-  width: 100vw;
-  min-height: 100vh;
-  margin: 0px;
-  padding: 0 0 140px 0;
-`
