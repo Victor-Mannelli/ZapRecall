@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function FlashCardPage(){
   const [respondedCounter, setRespondedCounter] = useState(0);
   const [fcQuantity, setFcQuantity] = useState(0);
+  const [ansIconList, setAnsIconList] = useState([]);
 
   return (
       <StyledApp>
@@ -15,8 +16,10 @@ export default function FlashCardPage(){
           respondedCounter={respondedCounter}
           setFcQuantity={setFcQuantity} 
           setRespondedCounter={setRespondedCounter}
+          setAnsIconList={setAnsIconList}
+          ansIconList={ansIconList}
         /> 
-        < Footer RespondedCounter={respondedCounter} fcQuantity={fcQuantity}/>
+        < Footer RespondedCounter={respondedCounter} fcQuantity={fcQuantity} ansIconList={ansIconList}/>
       </StyledApp>
   )
 }
@@ -32,5 +35,5 @@ const StyledApp = styled.div `
   width: 100vw;
   min-height: 100vh;
   margin: 0px;
-  padding: 0 0 140px 0;
+  padding: 0 0 100px 0;
 `

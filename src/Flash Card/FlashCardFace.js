@@ -58,7 +58,8 @@ const StyledFcFace = styled.div `
     img {
         position: absolute;
         bottom: 20px;
-        right: 10px;
+        right: 16px;
+        cursor: pointer;
     }
 `
 const StyledIcons = styled.div `

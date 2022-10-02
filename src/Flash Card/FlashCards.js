@@ -4,7 +4,7 @@ import FlashCardFace from "./FlashCardFace"
 import FlashCardQuestion from "./FlashCardQuestion"
 import FlashCardAnswer from "./FlashCardAnswer"
 
-export default function FlashCards({respondedCounter, setRespondedCounter, setFcQuantity}){
+export default function FlashCards({respondedCounter, setRespondedCounter, setFcQuantity, setAnsIconList, ansIconList}){
     setFcQuantity(FlashCardArray.length)
     return (
         <>
@@ -16,15 +16,17 @@ export default function FlashCards({respondedCounter, setRespondedCounter, setFc
                     question={e.question}
                     setRespondedCounter={setRespondedCounter}
                     respondedCounter={respondedCounter}
+                    setAnsIconList={setAnsIconList}
+                    ansIconList={ansIconList}
                     data-identifier="flashcard"
                 /> 
             )}
         </>
     )
 }
-function FlashCard({answer, question, i, setRespondedCounter, respondedCounter}){
-    const [FcState, setFcState] = useState("start")
-    const [QuestionIcon, setQuestionIcon] = useState("start")
+function FlashCard({answer, question, i, setRespondedCounter, respondedCounter, setAnsIconList, ansIconList}){
+    const [FcState, setFcState] = useState("start");
+    const [QuestionIcon, setQuestionIcon] = useState("start");
     
     return (
         <>
@@ -42,6 +44,8 @@ function FlashCard({answer, question, i, setRespondedCounter, respondedCounter})
                     setQuestionIcon={setQuestionIcon} 
                     respondedCounter={respondedCounter}
                     setRespondedCounter={setRespondedCounter}
+                    ansIconList={ansIconList}
+                    setAnsIconList={setAnsIconList}
                 /> 
             }
         </>

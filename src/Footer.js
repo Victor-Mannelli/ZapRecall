@@ -1,16 +1,14 @@
 import styled from "styled-components"
+import AnsIconFooter from "./AnsIconFooter"
 
-export default function Footer({RespondedCounter, fcQuantity}){
+export default function Footer({RespondedCounter, fcQuantity, ansIconList}){
     return (
         <>
             <StyledFooter>
                 <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
+                < AnsIconFooter ansIconList={ansIconList}/>
             </StyledFooter>
-            <div> 
-
-            </div>
-        </>
-        
+        </>   
     )
 }
 
@@ -25,7 +23,7 @@ const StyledFooter = styled.div `
     align-items: center;
     
     width: 100%;
-    min-height: 70px;
+    min-height: 80px;
     
     color: #333333;
     background-color: #FFFFFF;
@@ -37,4 +35,5 @@ const FooterH1 = styled.h1 `
     text-align: center;
     font-style: normal;
     line-height: 22px;
+    padding-top: 7px;
 `

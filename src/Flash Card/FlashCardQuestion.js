@@ -5,7 +5,7 @@ export default function FlashCardQuestion({setFcState, question}){
     return (
         <StyledFlashCard>
             <p data-identifier="flashcard-question"> {question} </p>
-            <img 
+            <img
                 onClick={() => setFcState("back")}
                 src={restart} 
                 alt=""
@@ -37,9 +37,10 @@ const StyledFlashCard = styled.div `
     line-height: 22px;
     color: #333333;
 
-    img, ion-icon {
+    img {
         position: absolute;
         bottom: 10px;
         right: 10px;
+        cursor: pointer;
     }
 `
