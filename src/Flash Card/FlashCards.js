@@ -1,14 +1,12 @@
 import { useState } from "react"
-import FlashCardArray from "./FlashCardArray"
 import FlashCardFace from "./FlashCardFace"
 import FlashCardQuestion from "./FlashCardQuestion"
 import FlashCardAnswer from "./FlashCardAnswer"
 
-export default function FlashCards({respondedCounter, setRespondedCounter, setFcQuantity, setAnsIconList, ansIconList}){
-    setFcQuantity(FlashCardArray.length)
+export default function FlashCards({respondedCounter, setRespondedCounter, setAnsIconList, ansIconList, deck}){
     return (
         <>
-            {FlashCardArray.map((e, i) => 
+            {deck.map((e, i) => 
                 <FlashCard 
                     key={i} 
                     i = {i} 

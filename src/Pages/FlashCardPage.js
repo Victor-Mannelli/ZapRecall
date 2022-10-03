@@ -4,22 +4,21 @@ import Footer from "../Footer";
 import Header from "../Header";
 import { useState } from "react";
 
-export default function FlashCardPage(){
+export default function FlashCardPage({deck}){
   const [respondedCounter, setRespondedCounter] = useState(0);
-  const [fcQuantity, setFcQuantity] = useState(0);
   const [ansIconList, setAnsIconList] = useState([]);
 
   return (
       <StyledApp>
         < Header />
         < FlashCards 
+          deck={deck}
           respondedCounter={respondedCounter}
-          setFcQuantity={setFcQuantity} 
           setRespondedCounter={setRespondedCounter}
           setAnsIconList={setAnsIconList}
           ansIconList={ansIconList}
         /> 
-        < Footer RespondedCounter={respondedCounter} fcQuantity={fcQuantity} ansIconList={ansIconList}/>
+        < Footer deck={deck} RespondedCounter={respondedCounter} ansIconList={ansIconList}/>
       </StyledApp>
   )
 }

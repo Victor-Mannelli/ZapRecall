@@ -1,17 +1,16 @@
 import styled from "styled-components"
 import AnsIconFooter from "./AnsIconFooter"
 
-export default function Footer({RespondedCounter, fcQuantity, ansIconList}){
+export default function Footer({RespondedCounter, ansIconList, deck}){
     return (
         <>
             <StyledFooter>
-                <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{fcQuantity} CONCLUÍDOS </FooterH1>
-                < AnsIconFooter ansIconList={ansIconList}/>
+                <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{deck.length} CONCLUÍDOS </FooterH1>
+                <AnsIconFooter ansIconList={ansIconList}/>
             </StyledFooter>
-        </>   
+        </>
     )
 }
-
 const StyledFooter = styled.div `
     position: fixed;
     bottom: 0;

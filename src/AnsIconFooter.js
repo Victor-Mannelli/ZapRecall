@@ -14,7 +14,8 @@ export default function AnsIconFooter({ansIconList}){
                     {color: "#FF922E"} :
 
                     e === "checkmark-circle" &&
-                    {color: "#2FBE34"} }
+                    {color: "#2FBE34"} 
+                }
             />)}
         </StyledUl>
     )

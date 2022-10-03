@@ -5,7 +5,9 @@ export default function Header(){
     return (
         <StyledHeader>
             <img src={logo} alt=""></img>
-            <h1> ZacRecall</h1>
+            <h1
+                onClick={() => window.location.reload()}
+            > ZacRecall</h1>
         </StyledHeader>
     )
 }

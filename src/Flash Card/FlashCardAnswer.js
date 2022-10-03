@@ -3,33 +3,33 @@ import styled from "styled-components";
 export default function FlashCardAnswer({answer, setFcState, setQuestionIcon, respondedCounter, setRespondedCounter, setAnsIconList, ansIconList}){
     return (
         <StyledFcAnswer>
-            <p data-identifier="flashcard-answer"> {answer} </p> 
+            <p data-identifier="flashcard-answer"> {answer} </p>
             <AnswerButtons>
                 <button
                     data-identifier="forgot-btn"
                     onClick={() => {
-                        setFcState("start"); 
-                        setQuestionIcon("wrong"); 
-                        setRespondedCounter(respondedCounter + 1) 
-                        setAnsIconList([...ansIconList, "close-circle"])
+                        setFcState("start");
+                        setQuestionIcon("wrong");
+                        setRespondedCounter(respondedCounter + 1);
+                        setAnsIconList([...ansIconList, "close-circle"]);
                     }}
                 > Não lembrei </button>
                 <button
                     data-identifier="almost-forgot-btn"
                     onClick={() => {
-                        setFcState("start"); 
-                        setQuestionIcon("almost"); 
-                        setRespondedCounter(respondedCounter + 1)
-                        setAnsIconList([...ansIconList, "help-circle"])
+                        setFcState("start");
+                        setQuestionIcon("almost");
+                        setRespondedCounter(respondedCounter + 1);
+                        setAnsIconList([...ansIconList, "help-circle"]);
                     }}
                 > Quase não lembrei </button> 
                 <button
                     data-identifier="zap-btn"
                     onClick={() => {
-                        setFcState("start"); 
-                        setQuestionIcon("zap"); 
-                        setRespondedCounter(respondedCounter + 1)
-                        setAnsIconList([...ansIconList, "checkmark-circle"])
+                        setFcState("start");
+                        setQuestionIcon("zap");
+                        setRespondedCounter(respondedCounter + 1);
+                        setAnsIconList([...ansIconList, "checkmark-circle"]);
                     }}
                 > Zap! </button>
             </AnswerButtons>
@@ -62,7 +62,7 @@ const StyledFcAnswer = styled.div `
 const AnswerButtons = styled.div `
     display: flex;
     justify-content: space-between;
-    padding-top: 15px;
+    padding-top: 30px;
     
     button {
         display: flex;

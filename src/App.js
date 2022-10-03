@@ -5,9 +5,11 @@ import HomeScreen from "./Pages/HomeScreen";
 
 export default function App() {
   const [zapState, setZapState] = useState(false)
+  const [deck, setDeck] = useState();
+
   return (
     <>
-      {zapState ? <FlashCardPage/> : <HomeScreen setZapState={setZapState}/>}
+      {zapState ? <FlashCardPage deck={deck} /> : <HomeScreen setDeck={setDeck} deck={deck} setZapState={setZapState}/>}
       <GlobalStyle />
     </>
   )

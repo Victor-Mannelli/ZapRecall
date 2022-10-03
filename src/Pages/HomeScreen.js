@@ -1,27 +1,33 @@
 import { useState } from "react"
 import styled from "styled-components"
 import logo from "../Images/logo.png"
+import DeckButton from "../DeckButton"
 
-export default function HomeScreen({setZapState}){
-  const [inputValue, setInputValue] = useState("")
+export default function HomeScreen({setZapState, setDeck, deck}){
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <StyledHomeScreen>
         <img src={logo} alt=""/>
         <h1>ZapRecall</h1>
+
+        < DeckButton setDeck={setDeck} deck={deck}/>
+        
         <StyledInput
           type="number"
           placeholder="Digite sua meta de zaps..."
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
         ></StyledInput>
+
         <StyledStartButton
           data-identifier="start-btn"
-          onClick={() => setZapState(true)}
+          onClick={() => 
+            deck !== undefined && setZapState(true)}
         >Iniciar Recall!</StyledStartButton>
     </StyledHomeScreen>
   )
 }
-  
 const StyledHomeScreen = styled.div `
   display: flex;
   flex-direction: column;
@@ -62,9 +68,9 @@ const StyledStartButton = styled.button `
   line-height: 22px;
 `
 const StyledInput = styled.input `
-  width: 70vw;
+  width: 73vw;
   min-height: 43px;
-  margin-bottom: 18px;
+  margin: 18px 0;
   padding: 0 15px;
 
   border: none;
@@ -77,4 +83,8 @@ const StyledInput = styled.input `
   color: #FB6B6B;
   font-size: 14px;
   line-height: 16px;
+
+  &::placeholder {
+    color: #ADADAD;
+  }
 `

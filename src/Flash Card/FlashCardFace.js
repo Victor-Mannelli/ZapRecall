@@ -4,7 +4,7 @@ import play from "../Images/arrow-play.png"
 export default function FlashCardFace({QuestionIcon, setFcState, i}){
     return (
         <StyledFcFace QuestionIcon={QuestionIcon}>
-            <p data-identifier="flashcard-index-item"> Questão {i} </p>
+            <p data-identifier="flashcard-index-item"> Questão {i + 1} </p>
             <img 
                 onClick={() => setFcState("front")}
                 src={ QuestionIcon === "start" ? play : undefined }
