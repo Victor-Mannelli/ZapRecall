@@ -13,26 +13,28 @@ export default function DeckButton({setDeck, deck}){
                 Escolha seu deck
                 <ion-icon name="chevron-down-outline"></ion-icon>
             </ChooseYourDeckButton>
-            {collapse && 
-                <ButtonsBackground>
-                    <ChooseYourDeckButton 
-                        onClick={() => setDeck(ReactArray) }
-                        style={deck === ReactArray
-                            ? {background: "#FB6B6B", color: "#FFFFFF"}
-                            : {backgroundColor: "#FFFFFF", color: "#ADADAD"}}
-                    >
-                        React deck
-                    </ChooseYourDeckButton>
-                    <ChooseYourDeckButton 
-                        onClick={() => setDeck(MetalGearArray)}
-                        style={deck === MetalGearArray 
-                            ? {background: "#FB6B6B", color: "#FFFFFF"} 
-                            : {backgroundColor: "#FFFFFF", color: "#ADADAD"}}
-                    >
-                        Metal Gear deck
-                    </ChooseYourDeckButton>
-                </ButtonsBackground>
-            }
+            
+            <ButtonsBackground
+                style={collapse === false ?{ height:"0"} : {height:"100px"}}
+            >
+                <ChooseYourDeckButton 
+                    onClick={() => setDeck(ReactArray) }
+                    style={deck === ReactArray
+                        ? {background: "#FB6B6B", color: "#FFFFFF"}
+                        : {backgroundColor: "#FFFFFF", color: "#ADADAD"}}
+                >
+                    React deck
+                </ChooseYourDeckButton>
+                <ChooseYourDeckButton 
+                    onClick={() => setDeck(MetalGearArray)}
+                    style={deck === MetalGearArray 
+                        ? {background: "#FB6B6B", color: "#FFFFFF"} 
+                        : {backgroundColor: "#FFFFFF", color: "#ADADAD"}}
+                >
+                    Metal Gear deck
+                </ChooseYourDeckButton>
+
+            </ButtonsBackground>
         </>
     )
 }
@@ -69,8 +71,9 @@ const ButtonsBackground = styled.div `
     align-items: center;
 
     width: 72vw;
-    height: 100px;
     background: #FFFFFF;
+    overflow: hidden;
+    transition: height linear 0.5s;
 
     button {
         width: 70vw;

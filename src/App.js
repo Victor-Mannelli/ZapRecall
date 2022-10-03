@@ -6,10 +6,13 @@ import HomeScreen from "./Pages/HomeScreen";
 export default function App() {
   const [zapState, setZapState] = useState(false)
   const [deck, setDeck] = useState();
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <>
-      {zapState ? <FlashCardPage deck={deck} /> : <HomeScreen setDeck={setDeck} deck={deck} setZapState={setZapState}/>}
+      {zapState 
+        ? <FlashCardPage deck={deck} inputValue={inputValue}/> 
+        : <HomeScreen inputValue={inputValue} setInputValue={setInputValue} setDeck={setDeck} deck={deck} setZapState={setZapState}/>}
       <GlobalStyle />
     </>
   )

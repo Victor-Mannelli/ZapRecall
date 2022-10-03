@@ -1,10 +1,12 @@
 import styled from "styled-components"
 import AnsIconFooter from "./AnsIconFooter"
+import ZapScreenResponse from "./ZapScreenResponse";
 
-export default function Footer({RespondedCounter, ansIconList, deck}){
+export default function Footer({RespondedCounter, ansIconList, deck, inputValue}){
     return (
         <>
             <StyledFooter>
+                <ZapScreenResponse ansIconList={ansIconList} inputValue={inputValue} deck={deck} RespondedCounter={RespondedCounter} />
                 <FooterH1 data-identifier="flashcard-counter"> {RespondedCounter}/{deck.length} CONCLUÍDOS </FooterH1>
                 <AnsIconFooter ansIconList={ansIconList}/>
             </StyledFooter>
@@ -22,7 +24,7 @@ const StyledFooter = styled.div `
     align-items: center;
     
     width: 100%;
-    min-height: 80px;
+    min-height: 100px;
     
     color: #333333;
     background-color: #FFFFFF;

@@ -3,8 +3,19 @@ import styled from "styled-components"
 import logo from "../Images/logo.png"
 import DeckButton from "../DeckButton"
 
-export default function HomeScreen({setZapState, setDeck, deck}){
-  const [inputValue, setInputValue] = useState("");
+export default function HomeScreen({setZapState, setDeck, deck, inputValue, setInputValue}){
+  const [underlineAlertDeck, setUnderlineAlertDeck] = useState(false)
+  const [underlineAlertInput, setUnderlineAlertInput] = useState(false)
+
+  function validate(){
+    if (deck === undefined){
+      return setUnderlineAlertDeck(true)
+    }
+    if (inputValue > deck.length || inputValue < 1) {
+      return setUnderlineAlertInput(true) 
+    }
+    setZapState(true)
+  }
 
   return (
     <StyledHomeScreen>
@@ -12,18 +23,19 @@ export default function HomeScreen({setZapState, setDeck, deck}){
         <h1>ZapRecall</h1>
 
         < DeckButton setDeck={setDeck} deck={deck}/>
-        
+        {underlineAlertDeck === true && <p> Você deve selecionar um deck antes! </p>}
+
         <StyledInput
           type="number"
           placeholder="Digite sua meta de zaps..."
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
         ></StyledInput>
+        {underlineAlertInput === true && <p> Sua meta deve ser maior que 0 e menor que {deck.length}! </p>}
 
         <StyledStartButton
           data-identifier="start-btn"
-          onClick={() => 
-            deck !== undefined && setZapState(true)}
+          onClick={() => validate()}
         >Iniciar Recall!</StyledStartButton>
     </StyledHomeScreen>
   )
@@ -52,10 +64,16 @@ const StyledHomeScreen = styled.div `
 
     margin-bottom: 35px;
   }
+  p {
+    margin-top: 3px;
+    font-size: 15px;
+    color: #FFFFFF;
+  }
 ` 
 const StyledStartButton = styled.button `
   width: 73vw;
   height: 54px;
+  margin-top: 18px;
 
   background: #FFFFFF;
   border: 1px solid #D70900;
@@ -70,7 +88,7 @@ const StyledStartButton = styled.button `
 const StyledInput = styled.input `
   width: 73vw;
   min-height: 43px;
-  margin: 18px 0;
+  margin-top: 18px;
   padding: 0 15px;
 
   border: none;

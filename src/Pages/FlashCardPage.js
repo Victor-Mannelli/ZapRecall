@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import FlashCards from "../Flash Card/FlashCards"
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import Header from "../Header";
 import { useState } from "react";
 
-export default function FlashCardPage({deck}){
+export default function FlashCardPage({deck, inputValue}){
   const [respondedCounter, setRespondedCounter] = useState(0);
   const [ansIconList, setAnsIconList] = useState([]);
 
@@ -18,11 +18,10 @@ export default function FlashCardPage({deck}){
           setAnsIconList={setAnsIconList}
           ansIconList={ansIconList}
         /> 
-        < Footer deck={deck} RespondedCounter={respondedCounter} ansIconList={ansIconList}/>
+        < Footer inputValue={inputValue} deck={deck} RespondedCounter={respondedCounter} ansIconList={ansIconList}/>
       </StyledApp>
   )
 }
-
 const StyledApp = styled.div `
 
   display: flex;  
@@ -34,5 +33,5 @@ const StyledApp = styled.div `
   width: 100vw;
   min-height: 100vh;
   margin: 0px;
-  padding: 0 0 100px 0;
+  padding: 0 0 110px 0;
 `
