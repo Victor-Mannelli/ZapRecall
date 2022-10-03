@@ -65,11 +65,10 @@ const StyledHomeScreen = styled.div `
     margin-bottom: 15px;
   }
   p {
-    margin-top: 3px;
     font-size: 15px;
     color: #FFFFFF;
   }
-  @media (max-width: 300px) {
+  @media (max-width: 400px) {
     width: 100vw;
     min-height: 100vh;
 
@@ -83,8 +82,8 @@ const StyledHomeScreen = styled.div `
 ` 
 const StyledStartButton = styled.button `
   width: 213px;
-  height: 54px;
-  margin: 18px 0;
+  min-height: 50px;
+  margin: 15px 0;
 
   background: #FFFFFF;
   border: 1px solid #D70900;
@@ -96,14 +95,14 @@ const StyledStartButton = styled.button `
   font-size: 18px;
   line-height: 22px;
 
-  @media (max-width: 300px) {
+  @media (max-width: 400px) {
     width: 73vw;
   }
 `
 const StyledInput = styled.input `
   width: 213px;
   min-height: 43px;
-  margin-top: 18px;
+  margin-top: 15px;
   padding: 0 15px;
 
   border: none;
@@ -121,7 +120,7 @@ const StyledInput = styled.input `
     color: #ADADAD;
   }
 
-  @media (max-width: 300px) {
+  @media (max-width: 400px) {
     width: 73vw;
   }
 `

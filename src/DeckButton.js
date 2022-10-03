@@ -63,7 +63,7 @@ const ChooseYourDeckButton = styled.button `
         bottom: 7px;
         font-size: 26px;
     }
-    @media (max-width: 300px) {
+    @media (max-width: 400px) {
         width: 72vw;
     }
 `
@@ -84,7 +84,7 @@ const ButtonsBackground = styled.div `
         border: 1px solid #FB6B6B;
         min-height: 30px;
     }
-    @media (max-width: 300px) {
+    @media (max-width: 400px) {
         width: 72vw;
         
         button {
