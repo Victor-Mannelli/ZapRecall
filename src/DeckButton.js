@@ -44,7 +44,7 @@ const ChooseYourDeckButton = styled.button `
     justify-content: space-between;
     align-items:center;
 
-    width: 72vw;
+    width: 213px;
     min-height: 43px;
     padding-left: 15px;
 
@@ -63,6 +63,9 @@ const ChooseYourDeckButton = styled.button `
         bottom: 7px;
         font-size: 26px;
     }
+    @media (max-width: 300px) {
+        width: 72vw;
+    }
 `
 const ButtonsBackground = styled.div `
     display: flex;
@@ -70,14 +73,23 @@ const ButtonsBackground = styled.div `
     justify-content: space-evenly;
     align-items: center;
 
-    width: 72vw;
+    width: 213px;
     background: #FFFFFF;
     overflow: hidden;
     transition: height linear 0.5s;
 
     button {
-        width: 70vw;
+        width: 205px;
         border-radius: 5px;
         border: 1px solid #FB6B6B;
+        min-height: 30px;
+    }
+    @media (max-width: 300px) {
+        width: 72vw;
+        
+        button {
+            width: 70vw;
+            min-height: 43px;
+        }
     }
 `

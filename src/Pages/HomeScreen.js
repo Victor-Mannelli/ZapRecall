@@ -47,14 +47,14 @@ const StyledHomeScreen = styled.div `
   align-items: center;
 
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #FB6B6B;
 
   font-family: 'Righteous';
 
   img {
-    width: 36vw;
-    margin-bottom: 20px;
+    width: 100px;
+    margin: 5px 0;
   }
   h1 {
     font-size: 36px;
@@ -62,18 +62,29 @@ const StyledHomeScreen = styled.div `
     letter-spacing: -0.012em;
     color: #FFFFFF;
 
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   }
   p {
     margin-top: 3px;
     font-size: 15px;
     color: #FFFFFF;
   }
+  @media (max-width: 300px) {
+    width: 100vw;
+    min-height: 100vh;
+
+    img {
+      width: 36vw;
+    }
+    h1 {
+      margin-bottom: 35px;
+    }
+  }
 ` 
 const StyledStartButton = styled.button `
-  width: 73vw;
+  width: 213px;
   height: 54px;
-  margin-top: 18px;
+  margin: 18px 0;
 
   background: #FFFFFF;
   border: 1px solid #D70900;
@@ -84,9 +95,13 @@ const StyledStartButton = styled.button `
   color: #D70900;
   font-size: 18px;
   line-height: 22px;
+
+  @media (max-width: 300px) {
+    width: 73vw;
+  }
 `
 const StyledInput = styled.input `
-  width: 73vw;
+  width: 213px;
   min-height: 43px;
   margin-top: 18px;
   padding: 0 15px;
@@ -104,5 +119,9 @@ const StyledInput = styled.input `
 
   &::placeholder {
     color: #ADADAD;
+  }
+
+  @media (max-width: 300px) {
+    width: 73vw;
   }
 `
