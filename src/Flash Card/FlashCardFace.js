@@ -29,7 +29,7 @@ const StyledFcFace = styled.div `
     align-items: center;
     justify-content: space-between;
 
-    width: 70vw;   
+    width: 500px;   
     height: 65px;
     margin: 12px;
 
@@ -60,6 +60,9 @@ const StyledFcFace = styled.div `
         bottom: 20px;
         right: 16px;
         cursor: pointer;
+    }
+    @media (max-width: 510px) {
+        width: 70vw;  
     }
 `
 const StyledIcons = styled.div `

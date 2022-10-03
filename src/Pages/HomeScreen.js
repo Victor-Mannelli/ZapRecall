@@ -53,8 +53,8 @@ const StyledHomeScreen = styled.div `
   font-family: 'Righteous';
 
   img {
-    width: 100px;
-    margin: 5px 0;
+    width: 160px;
+    margin: 17px 0;
   }
   h1 {
     font-size: 36px;
@@ -62,7 +62,7 @@ const StyledHomeScreen = styled.div `
     letter-spacing: -0.012em;
     color: #FFFFFF;
 
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   p {
     font-size: 15px;
@@ -74,14 +74,15 @@ const StyledHomeScreen = styled.div `
 
     img {
       width: 36vw;
+      margin: 5px 0;
     }
     h1 {
-      margin-bottom: 35px;
+      margin-bottom: 15px;
     }
   }
 ` 
 const StyledStartButton = styled.button `
-  width: 213px;
+  width: 270px;
   min-height: 50px;
   margin: 15px 0;
 
@@ -100,7 +101,7 @@ const StyledStartButton = styled.button `
   }
 `
 const StyledInput = styled.input `
-  width: 213px;
+  width: 270px;
   min-height: 43px;
   margin-top: 15px;
   padding: 0 15px;

@@ -44,7 +44,7 @@ const ChooseYourDeckButton = styled.button `
     justify-content: space-between;
     align-items:center;
 
-    width: 213px;
+    width: 270px;
     min-height: 43px;
     padding-left: 15px;
 
@@ -73,16 +73,16 @@ const ButtonsBackground = styled.div `
     justify-content: space-evenly;
     align-items: center;
 
-    width: 213px;
+    width: 270px;
     background: #FFFFFF;
     overflow: hidden;
     transition: height linear 0.5s;
 
     button {
-        width: 205px;
+        width: 255px;
         border-radius: 5px;
         border: 1px solid #FB6B6B;
-        min-height: 30px;
+        min-height: 43px;
     }
     @media (max-width: 400px) {
         width: 72vw;

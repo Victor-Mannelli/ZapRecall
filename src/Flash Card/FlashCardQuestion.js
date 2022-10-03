@@ -21,7 +21,7 @@ const StyledFlashCard = styled.div `
     flex-direction: column;
     justify-content: space-between;
 
-    width: 70vw; 
+    width: 500px; 
     min-height: 100px;
     margin: 12px;
     padding: 17px;
@@ -42,5 +42,8 @@ const StyledFlashCard = styled.div `
         bottom: 10px;
         right: 10px;
         cursor: pointer;
+    }
+    @media (max-width: 510px) {
+        width: 70vw;  
     }
 `

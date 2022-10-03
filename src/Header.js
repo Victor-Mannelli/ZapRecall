@@ -18,17 +18,24 @@ const StyledHeader = styled.div `
     align-items: center;
     justify-content: center;
     margin: 40px 0 20px 0;
-
     img {
-        width: 52px;
+        width: 80px;
     }
     h1 {
         font-family: 'Righteous';
         font-style: normal;
         font-weight: 400;
-        font-size: 36px;
+        font-size: 45px;
         line-height: 45px;
         color: #FFFFFF;
         margin-left: 20px;
+    }
+    @media (max-width: 400px) {
+        img {
+            width: 52px;
+        }
+        h1 {
+            font-size: 36px;
+        }
     }
 `
